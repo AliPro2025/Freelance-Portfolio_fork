@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 full_name: document.getElementById('fullname').value,
                 email: document.getElementById('email').value,
                 password: passwordInput.value,
+                confirm_password: confirmInput.value,
                 phone: '0000000000'
             };
 
