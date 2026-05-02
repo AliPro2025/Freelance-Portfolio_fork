@@ -1,4 +1,3 @@
-// Authentication Pages JavaScript
 class AuthPages {
     constructor() {
         this.init();
@@ -44,9 +43,7 @@ class AuthPages {
         }
     }
 
-    setupSocialLogin() {
-        // Social login buttons are handled by event listeners above
-    }
+    setupSocialLogin() {}
 
     setupPasswordVisibility() {
         const passwordInputs = document.querySelectorAll('input[type="password"]');
@@ -55,47 +52,69 @@ class AuthPages {
         });
     }
 
-    handleFormSubmit(form) {
+    async handleFormSubmit(form) {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
-        
-        if (!this.validateForm(form)) {
-            return;
-        }
+
+        if (!this.validateForm(form)) return;
 
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = window.commonFunctions.currentLang === 'en' ? 'Processing...' : 'جاري المعالجة...';
         submitBtn.disabled = true;
 
-        setTimeout(() => {
+        const isLogin = form.id === 'login-form' || 
+            (!document.getElementById('fullName') && 
+             form.querySelector('input[type="email"]') && 
+             form.querySelector('input[type="password"]'));
+
+        const url = isLogin
+            ? API_BASE + '/api/auth/login'
+            : API_BASE + '/api/auth/register';
+
+        try {
+            const res = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            const json = await res.json();
+
+            if (json.success) {
+                localStorage.setItem('kz_token', json.token);
+                localStorage.setItem('kz_user', JSON.stringify(json.user));
+                if (isLogin) {
+                    this.handleLoginSuccess(data);
+                } else {
+                    this.handleSignupSuccess(data);
+                }
+            } else {
+                window.commonFunctions.showNotification(json.message, 'error');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        } catch (err) {
+            window.commonFunctions.showNotification('Connection error. Try again.', 'error');
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
-            
-            if (form.id === 'login-form' || form.querySelector('input[type="email"]') && form.querySelector('input[type="password"]') && !document.getElementById('fullName')) {
-                this.handleLoginSuccess(data);
-            } else {
-                this.handleSignupSuccess(data);
-            }
-        }, 2000);
+        }
     }
 
     validateForm(form) {
         let isValid = true;
         const inputs = form.querySelectorAll('input[required]');
-        
         inputs.forEach(input => {
             if (!window.commonFunctions.validateField(input)) {
                 isValid = false;
             }
         });
-
         return isValid;
     }
 
     handleLoginSuccess(data) {
-        const message = window.commonFunctions.currentLang === 'en' 
-            ? 'Login successful!' 
+        const message = window.commonFunctions.currentLang === 'en'
+            ? 'Login successful!'
             : 'تم تسجيل الدخول بنجاح!';
         window.commonFunctions.showNotification(message, 'success');
         setTimeout(() => {
@@ -104,8 +123,8 @@ class AuthPages {
     }
 
     handleSignupSuccess(data) {
-        const message = window.commonFunctions.currentLang === 'en' 
-            ? 'Account created successfully!' 
+        const message = window.commonFunctions.currentLang === 'en'
+            ? 'Account created successfully!'
             : 'تم إنشاء الحساب بنجاح!';
         window.commonFunctions.showNotification(message, 'success');
         setTimeout(() => {
@@ -114,21 +133,19 @@ class AuthPages {
     }
 
     handleSocialLogin(provider) {
-        const message = window.commonFunctions.currentLang === 'en' 
-            ? `${provider} login in development` 
+        const message = window.commonFunctions.currentLang === 'en'
+            ? `${provider} login in development`
             : `تسجيل الدخول بحساب ${provider} قيد التطوير`;
         window.commonFunctions.showNotification(message, 'info');
     }
 }
 
-// Initialize auth pages when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.auth-container')) {
         window.authPages = new AuthPages();
     }
 });
 
-// Global functions for form handling
 function handleLogin(event) {
     event.preventDefault();
     window.authPages.handleFormSubmit(event.target);
