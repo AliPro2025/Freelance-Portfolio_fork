@@ -4,97 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Kickzone - Sign In</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navigation.css">
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-left">
-                <div class="nav-logo" onclick="window.location.href='../landing/index.html'">
-                    <div class="logo-icon"></div>
-                    <span class="logo-text">KickZone</span>
-                </div>
-                <div class="nav-menu">
-                    <a href="../landing/index.html#features" class="nav-link">Features</a>
-                    <a href="../landing/index.html#how-it-works" class="nav-link">How It Works</a>
-                    <a href="../landing/index.html#popular-fields" class="nav-link">Popular Fields</a>
-                </div>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-left">
+            <div class="nav-logo" onclick="window.location.href='../landing/index.html'">
+                <div class="logo-icon"></div>
+                <span class="logo-text">KickZone</span>
             </div>
-            <div class="nav-actions">
-                <button class="nav-btn primary" onclick="window.location.href='index.html'">Login</button>
-                <button class="nav-btn secondary" onclick="window.location.href='../signup/index.html'">Sign Up</button>
+
+            <div class="nav-menu">
+                <a href="../landing/index.html#features" class="nav-link">Features</a>
+                <a href="../landing/index.html#how-it-works" class="nav-link">How It Works</a>
+                <a href="../landing/index.html#popular-fields" class="nav-link">Popular Fields</a>
             </div>
         </div>
-    </nav>
 
-    <div class="main-container">
-        <div class="overlay"></div>
-
-        <div class="signin-container">
-            <div class="logo-circle">
-                <img src="images/Background+Shadow.svg" alt="KickZone Logo" width="40" height="40">
-            </div>
-            <h1 style="font-size: 1.5rem;">Welcome to<br>Kickzone</h1>
-            <p class="subtitle" style="font-size: 1rem;">Your ultimate football community</p>
-            
-            <form style="max-width: 300px;">
-                <div class="input-group">
-                    <label for="email" style="font-size: 1rem;">Email Address</label>
-                    <div class="input-field">
-                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#757575" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        <input type="email" id="email" placeholder="name@example.com" required style="font-size: 1rem;">
-                    </div>
-                </div>
-                
-                <div class="input-group">
-                    <div class="label-row">
-                        <label for="password" style="font-size: 1rem;">Password</label>
-                        <a href="#" class="forgot-link" style="font-size: 1rem;">Forgot password?</a>
-                    </div>
-                    <div class="input-field">
-                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#757575" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                        <input type="password" id="password" placeholder="••••••••" required style="font-size: 1rem;">
-                        <svg class="icon-right" id="togglePassword" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#757575" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                    </div>
-                </div>
-                
-                <div class="remember-row">
-                    <input type="checkbox" id="remember">
-                    <label for="remember">Remember this device</label>
-                </div>
-                
-                <button type="submit" class="signin-btn">Sign In to Kickzone</button>
-            </form>
-            
-            <div class="or-divider">
-                <span>OR CONTINUE WITH</span>
-            </div>
-            
-            <div class="social-btns">
-                <button class="social-btn google">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18.8 10.2083C18.8 9.55831 18.7417 8.93331 18.6333 8.33331H10V11.8833H14.9333C14.7167 13.025 14.0667 13.9916 13.0917 14.6416V16.95H16.0667C17.8 15.35 18.8 13 18.8 10.2083Z" fill="#4285F4"/>
-                        <path d="M9.99998 19.1667C12.475 19.1667 14.55 18.35 16.0667 16.95L13.0917 14.6417C12.275 15.1917 11.2333 15.525 9.99998 15.525C7.61665 15.525 5.59165 13.9167 4.86665 11.75H1.81665V14.1167C3.32498 17.1083 6.41665 19.1667 9.99998 19.1667Z" fill="#34A853"/>
-                        <path d="M4.86671 11.7417C4.68337 11.1917 4.57504 10.6083 4.57504 10C4.57504 9.39166 4.68337 8.80833 4.86671 8.25833V5.89166H1.81671C1.19171 7.125 0.833374 8.51666 0.833374 10C0.833374 11.4833 1.19171 12.875 1.81671 14.1083L4.19171 12.2583L4.86671 11.7417Z" fill="#FBBC05"/>
-                        <path d="M9.99998 4.48331C11.35 4.48331 12.55 4.94998 13.5083 5.86665L16.1333 3.24165C14.5417 1.74165 12.475 0.833313 9.99998 0.833313C6.41665 0.833313 3.32498 2.89165 1.81665 5.89165L4.86665 8.25831C5.59165 6.09165 7.61665 4.48331 9.99998 4.48331Z" fill="#EA4335"/>
-                    </svg>
-                    Google
-                </button>
-                <button class="social-btn facebook">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 10.0001C20 4.47756 15.5225 6.10352e-05 10 6.10352e-05C4.4775 6.10352e-05 0 4.47756 0 10.0001C0 14.9917 3.65667 19.1284 8.4375 19.8784V12.8909H5.89833V9.99923H8.4375V7.79756C8.4375 5.29173 9.93083 3.90673 12.215 3.90673C13.3083 3.90673 14.4533 4.10256 14.4533 4.10256V6.56339H13.1917C11.9492 6.56339 11.5617 7.33423 11.5617 8.12506V10.0001H14.335L13.8917 12.8917H11.5617V19.8792C16.3433 19.1284 20 14.9909 20 10.0001Z" fill="#3B82F6"/>
-                    </svg>
-                    Facebook
-                </button>
-            </div>
-            
-            <p class="signup-row">Don't have an account? <a href="../signup/index.html">Sign up for free</a></p>
+        <div class="nav-actions">
+            <button class="nav-btn primary" onclick="window.location.href='index.html'">Login</button>
+            <button class="nav-btn secondary" onclick="window.location.href='../signup/index.html'">Sign Up</button>
         </div>
-   
+    </div>
+</nav>
 
-    <script src="js/script.js"></script>
+<!-- Main -->
+<div class="main-container">
+    <div class="overlay"></div>
+
+    <div class="signin-container">
+
+        <div class="logo-circle">
+            <img src="images/Background+Shadow.svg" alt="KickZone Logo" width="40" height="40">
+        </div>
+
+        <h1 style="font-size: 1.5rem;">Welcome to<br>Kickzone</h1>
+        <p class="subtitle" style="font-size: 1rem;">Your ultimate football community</p>
+
+        <!-- ✅ IMPORTANT FIXED FORM -->
+        <form id="login-form" class="auth-form" style="max-width: 300px;">
+
+            <!-- Email -->
+            <div class="input-group">
+                <label for="email" style="font-size: 1rem;">Email Address</label>
+                <div class="input-field">
+                    <input type="email" id="email" name="email"
+                           placeholder="name@example.com" required>
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="input-group">
+                <div class="label-row">
+                    <label for="password" style="font-size: 1rem;">Password</label>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+
+                <div class="input-field">
+                    <input type="password" id="password" name="password"
+                           placeholder="••••••••" required>
+                </div>
+            </div>
+
+            <!-- Remember -->
+            <div class="remember-row">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember this device</label>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="signin-btn">
+                Sign In to Kickzone
+            </button>
+        </form>
+
+        <!-- Divider -->
+        <div class="or-divider">
+            <span>OR CONTINUE WITH</span>
+        </div>
+
+        <!-- Social -->
+        <div class="social-btns">
+            <button class="social-btn google">Google</button>
+            <button class="social-btn facebook">Facebook</button>
+        </div>
+
+        <!-- Signup -->
+        <p class="signup-row">
+            Don't have an account?
+            <a href="../signup/index.html">Sign up for free</a>
+        </p>
+
+    </div>
+</div>
+
+<!-- ✅ IMPORTANT SCRIPTS -->
+<script src="../../config.js"></script>
+<script src="js/auth.js"></script>
+
 </body>
 </html>
