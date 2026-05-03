@@ -7,170 +7,150 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- CSS Files -->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/navigation.css">
     <link rel="stylesheet" href="css/landing.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-left">
-                <div class="nav-logo" onclick="window.location.href='index.html'">
-                    <div class="logo-icon"></div>
-                    <span class="logo-text">KickZone</span>
-                </div>
-                <div class="nav-menu">
-                    <a href="#features" class="nav-link" onclick="showSection('features')" data-i18n="nav.features">Features</a>
-                    <a href="#how-it-works" class="nav-link" onclick="showSection('how-it-works')" data-i18n="nav.how-it-works">How It Works</a>
-                    <a href="#popular-fields" class="nav-link" onclick="showSection('popular-fields')" data-i18n="nav.popular-fields">Popular Fields</a>
-                </div>
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-left">
+            <div class="nav-logo" onclick="window.location.href='index.html'">
+                <div class="logo-icon"></div>
+                <span class="logo-text">KickZone</span>
             </div>
-            <div class="nav-actions">
-                <div class="lang-toggle" onclick="toggleLanguage()">
-                    <span id="current-lang">EN</span>
-                    <span>🌐</span>
-                </div>
-                <button class="nav-btn primary" onclick="window.location.href='../login/index.html'" data-i18n="nav.login">Login</button>
-                <button class="nav-btn secondary" onclick="window.location.href='../signup/index.html'" data-i18n="nav.signup">Sign Up</button>
-                <div class="nav-toggle" onclick="toggleMobileMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+            <div class="nav-menu">
+                <a href="#features" class="nav-link" data-i18n="nav.features">Features</a>
+                <a href="#how-it-works" class="nav-link" data-i18n="nav.how-it-works">How It Works</a>
+                <a href="#popular-fields" class="nav-link" data-i18n="nav.popular-fields">Popular Fields</a>
             </div>
         </div>
-    </nav>
-
-    <!-- Page Container -->
-    <div id="page-container">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-background">
-                <div class="hero-image"></div>
-                <div class="hero-overlay"></div>
-                <div class="hero-gradient"></div>
+        <div class="nav-actions">
+            <div class="lang-toggle" onclick="toggleLanguage()">
+                <span id="current-lang">EN</span>
+                <span>🌐</span>
             </div>
-            <div class="decorative-glow"></div>
-            <div class="hero-content">
-                <div class="hero-heading">
-                    <h1>
-                        <span class="text-white" data-i18n="hero.line1">Find. Book.</span>
-                        <span class="text-green" data-i18n="hero.line2">Play.</span>
-                    </h1>
-                </div>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary btn-large" onclick="navigateToPage('signup')" data-i18n="hero.find-fields">Find Fields</button>
-                    <button class="btn btn-secondary btn-large" data-i18n="hero.browse-fields">Browse Fields</button>
-                </div>
+            <button class="nav-btn primary" onclick="window.location.href='../login/index.html'" data-i18n="nav.login">Login</button>
+            <button class="nav-btn secondary" onclick="window.location.href='../signup/index.html'" data-i18n="nav.signup">Sign Up</button>
+            <div class="nav-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </section>
-
-        <!-- Features Section -->
-        <section id="features" class="features-section">
-            <div class="container">
-                <div class="section-heading">
-                    <h2 data-i18n="features.title">Getting Started Is Simple</h2>
-                </div>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <span>1</span>
-                        </div>
-                        <h3 data-i18n="features.step1.title">Create Account</h3>
-                        <p data-i18n="features.step1.description">Sign up with us easily and start your journey of booking fields</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <span>2</span>
-                        </div>
-                        <h3 data-i18n="features.step2.title">Find Field</h3>
-                        <p data-i18n="features.step2.description">Explore available fields in your area</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <span>3</span>
-                        </div>
-                        <h3 data-i18n="features.step3.title">Book Now</h3>
-                        <p data-i18n="features.step3.description">Book the perfect field for you with ease</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Popular Fields Section -->
-        <section id="popular-fields" class="popular-fields-section">
-            <div class="container">
-                <div class="section-heading">
-                    <h2 data-i18n="fields.title">Popular Fields</h2>
-                </div>
-                <div class="fields-grid">
-                    <div class="field-card">
-                        <div class="field-image" style="background: url('images/2.svg') center/cover;"></div>
-                        <div class="field-info">
-                            <h3 data-i18n="fields.field1.name">Champions Field</h3>
-                            <p data-i18n="fields.field1.location">Riyadh</p>
-                            <div class="field-rating">
-                                <span>⭐ 4.8</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="field-card">
-                        <div class="field-image" style="background: url('images/3.svg') center/cover;"></div>
-                        <div class="field-info">
-                            <h3 data-i18n="fields.field2.name">Stars Field</h3>
-                            <p data-i18n="fields.field2.location">Jeddah</p>
-                            <div class="field-rating">
-                                <span>⭐ 4.9</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="field-card">
-                        <div class="field-image" style="background: url('images/4.svg') center/cover;"></div>
-                        <div class="field-info">
-                            <h3 data-i18n="fields.field3.name">Professionals Field</h3>
-                            <p data-i18n="fields.field3.location">Dammam</p>
-                            <div class="field-rating">
-                                <span>⭐ 4.7</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
     </div>
+</nav>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <div class="logo-icon"></div>
-                    <span>KickZone</span>
-                </div>
-                <div class="footer-links">
-                    <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
-                    <a href="#" data-i18n="footer.terms">Terms of Service</a>
-                    <a href="#" data-i18n="footer.help">Help Center</a>
-                </div>
-                <div class="footer-social">
-                    <a href="#" data-i18n="footer.facebook">Facebook</a>
-                    <a href="#" data-i18n="footer.twitter">Twitter</a>
-                    <a href="#" data-i18n="footer.instagram">Instagram</a>
-                </div>
+<div id="page-container">
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-image"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="decorative-glow"></div>
+        <div class="hero-content">
+            <div class="hero-heading">
+                <h1>
+                    <span class="text-white" data-i18n="hero.line1">Find. Book.</span>
+                    <span class="text-green" data-i18n="hero.line2">Play.</span>
+                </h1>
             </div>
-            <div class="footer-bottom">
-                <p data-i18n="footer.copyright">&copy; 2024 KickZone. All rights reserved.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary btn-large" onclick="window.location.href='../browse/index.html'" data-i18n="hero.find-fields">Find Fields</button>
+                <button class="btn btn-secondary btn-large" onclick="window.location.href='../browse/index.html'" data-i18n="hero.browse-fields">Browse Fields</button>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- JavaScript Files -->
-    <script src="js/common.js"></script>
-    <script src="js/navigation.js"></script>
-    <script src="js/landing.js"></script>
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2 data-i18n="features.title">Getting Started Is Simple</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><span>1</span></div>
+                    <h3 data-i18n="features.step1.title">Create Account</h3>
+                    <p data-i18n="features.step1.description">Sign up with us easily and start your journey of booking fields</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><span>2</span></div>
+                    <h3 data-i18n="features.step2.title">Find Field</h3>
+                    <p data-i18n="features.step2.description">Explore available fields in your area</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><span>3</span></div>
+                    <h3 data-i18n="features.step3.title">Book Now</h3>
+                    <p data-i18n="features.step3.description">Book the perfect field for you with ease</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="popular-fields" class="popular-fields-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2 data-i18n="fields.title">Popular Fields</h2>
+            </div>
+            <div class="fields-grid">
+                <div class="field-card">
+                    <div class="field-image" style="background: url('images/2.svg') center/cover;"></div>
+                    <div class="field-info">
+                        <h3 data-i18n="fields.field1.name">Champions Field</h3>
+                        <p data-i18n="fields.field1.location">Riyadh</p>
+                        <div class="field-rating"><span>⭐ 4.8</span></div>
+                    </div>
+                </div>
+                <div class="field-card">
+                    <div class="field-image" style="background: url('images/3.svg') center/cover;"></div>
+                    <div class="field-info">
+                        <h3 data-i18n="fields.field2.name">Stars Field</h3>
+                        <p data-i18n="fields.field2.location">Jeddah</p>
+                        <div class="field-rating"><span>⭐ 4.9</span></div>
+                    </div>
+                </div>
+                <div class="field-card">
+                    <div class="field-image" style="background: url('images/4.svg') center/cover;"></div>
+                    <div class="field-info">
+                        <h3 data-i18n="fields.field3.name">Professionals Field</h3>
+                        <p data-i18n="fields.field3.location">Dammam</p>
+                        <div class="field-rating"><span>⭐ 4.7</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-icon"></div>
+                <span>KickZone</span>
+            </div>
+            <div class="footer-links">
+                <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
+                <a href="#" data-i18n="footer.terms">Terms of Service</a>
+                <a href="#" data-i18n="footer.help">Help Center</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" data-i18n="footer.facebook">Facebook</a>
+                <a href="#" data-i18n="footer.twitter">Twitter</a>
+                <a href="#" data-i18n="footer.instagram">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="footer.copyright">&copy; 2024 KickZone. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../../config.js"></script>
+<script src="js/common.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/landing.js"></script>
 </body>
 </html>
