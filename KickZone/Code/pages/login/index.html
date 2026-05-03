@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Kickzone - Sign In</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navigation.css">
 </head>
-
 <body>
 
-<!-- Navigation -->
 <nav class="navbar">
     <div class="nav-container">
         <div class="nav-left">
@@ -20,14 +17,12 @@
                 <div class="logo-icon"></div>
                 <span class="logo-text">KickZone</span>
             </div>
-
             <div class="nav-menu">
                 <a href="../landing/index.html#features" class="nav-link">Features</a>
                 <a href="../landing/index.html#how-it-works" class="nav-link">How It Works</a>
                 <a href="../landing/index.html#popular-fields" class="nav-link">Popular Fields</a>
             </div>
         </div>
-
         <div class="nav-actions">
             <button class="nav-btn primary" onclick="window.location.href='index.html'">Login</button>
             <button class="nav-btn secondary" onclick="window.location.href='../signup/index.html'">Sign Up</button>
@@ -35,79 +30,54 @@
     </div>
 </nav>
 
-<!-- Main -->
 <div class="main-container">
     <div class="overlay"></div>
-
     <div class="signin-container">
-
         <div class="logo-circle">
             <img src="images/Background+Shadow.svg" alt="KickZone Logo" width="40" height="40">
         </div>
-
         <h1 style="font-size: 1.5rem;">Welcome to<br>Kickzone</h1>
         <p class="subtitle" style="font-size: 1rem;">Your ultimate football community</p>
 
-        <!-- ✅ IMPORTANT FIXED FORM -->
         <form id="login-form" class="auth-form" style="max-width: 300px;">
-
-            <!-- Email -->
             <div class="input-group">
                 <label for="email" style="font-size: 1rem;">Email Address</label>
                 <div class="input-field">
-                    <input type="email" id="email" name="email"
-                           placeholder="name@example.com" required>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
                 </div>
             </div>
-
-            <!-- Password -->
             <div class="input-group">
                 <div class="label-row">
                     <label for="password" style="font-size: 1rem;">Password</label>
                     <a href="#" class="forgot-link">Forgot password?</a>
                 </div>
-
                 <div class="input-field">
-                    <input type="password" id="password" name="password"
-                           placeholder="••••••••" required>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
                 </div>
             </div>
-
-            <!-- Remember -->
             <div class="remember-row">
                 <input type="checkbox" id="remember" name="remember">
                 <label for="remember">Remember this device</label>
             </div>
-
-            <!-- Submit -->
-            <button type="submit" class="signin-btn">
-                Sign In to Kickzone
-            </button>
+            <button type="submit" class="signin-btn">Sign In to Kickzone</button>
         </form>
 
-        <!-- Divider -->
         <div class="or-divider">
             <span>OR CONTINUE WITH</span>
         </div>
-
-        <!-- Social -->
         <div class="social-btns">
             <button class="social-btn google">Google</button>
             <button class="social-btn facebook">Facebook</button>
         </div>
-
-        <!-- Signup -->
         <p class="signup-row">
             Don't have an account?
             <a href="../signup/index.html">Sign up for free</a>
         </p>
-
     </div>
 </div>
 
-<!-- ✅ IMPORTANT SCRIPTS -->
 <script src="../../config.js"></script>
-<script src="js/auth.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
